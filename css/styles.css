@@ -1,0 +1,10 @@
+h2 {
+  font-family: 'karla', sans-serif;
+  color: #fff;
+  background-color: #e7717d;
+  margin: 0 auto;
+  padding-left: 7rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
