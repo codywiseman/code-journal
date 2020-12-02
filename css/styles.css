@@ -27,9 +27,15 @@ label > input {
   margin-top: 1rem;
 }
 
+label,
+p,
+h3,
+h4 {
+  font-family: 'rubik', sans-serif;
+}
+
 label {
   height: 20%;
-  font-family: 'rubik', sans-serif;
   color: #303c6c;
 }
 
@@ -73,4 +79,15 @@ h1 {
   background-color: #fff;
   color: #f4976c;
   border: 0.15rem solid #f4976c;
+}
+
+.icon {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+h3,
+h4 {
+  display: flex;
+  align-items: center;
 }
