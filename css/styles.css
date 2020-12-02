@@ -1,6 +1,6 @@
 main {
   margin: 0 5%;
-  margin-bottom: 2rem;
+  margin-bottom: ;
 }
 
 header {
@@ -10,9 +10,8 @@ header {
 }
 
 input,
-textarea,
-img {
-  border: 0.15rem solid #303c6c;
+textarea {
+  border: 0.17rem solid #303c6c;
   border-radius: 0.2rem;
 }
 
