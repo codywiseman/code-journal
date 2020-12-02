@@ -1,6 +1,6 @@
 main {
   margin: 0 5%;
-  margin-bottom: ;
+  margin-bottom: 2rem;
 }
 
 header {
@@ -38,18 +38,14 @@ label:not([for='url']) {
 }
 
 textarea {
+  font-family: 'rubik', sans-serif;
   width: 100%;
   height: 6rem;
   margin: 1rem 0;
-  font-family: 'rubik', sans-serif;
 }
 
 .placeholder-img {
   width: 100%;
-}
-
-.submit-button {
-  text-align: end;
 }
 
 h1,
@@ -59,6 +55,10 @@ h2 {
 
 h1 {
   color: #303c6c;
+}
+
+.submit-button {
+  text-align: end;
 }
 
 .submit-button > input {
