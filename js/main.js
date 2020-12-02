@@ -13,6 +13,6 @@ $profileForm.addEventListener('submit', function (e) {
   e.preventDefault();
   for (var inputNode = 0; inputNode < $inputElements.length; inputNode++) {
     data.profile[$inputElements[inputNode].name] = $inputElements[inputNode].value;
-
   }
+  $profileForm.reset();
 });
