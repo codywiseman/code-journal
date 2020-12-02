@@ -1,0 +1,76 @@
+main {
+  margin: 0 5%;
+  margin-bottom: 2rem;
+}
+
+header {
+  background-color: #f4976c;
+  color: #fff;
+  padding-left: 10%;
+}
+
+input,
+textarea {
+  border: 0.17rem solid #303c6c;
+  border-radius: 0.2rem;
+}
+
+label,
+textarea,
+label > input {
+  display: block;
+}
+
+label > input {
+  width: 100%;
+  height: 2.7rem;
+  margin-top: 1rem;
+}
+
+label {
+  height: 20%;
+  font-family: 'rubik', sans-serif;
+  color: #303c6c;
+}
+
+label:not([for='url']) {
+  margin-top: 1.5rem;
+}
+
+textarea {
+  font-family: 'rubik', sans-serif;
+  width: 100%;
+  height: 6rem;
+  margin: 1rem 0;
+}
+
+.placeholder-img {
+  width: 100%;
+}
+
+h1,
+h2 {
+  font-family: 'karla', sans-serif;
+}
+
+h1 {
+  color: #303c6c;
+}
+
+.submit-button {
+  text-align: end;
+}
+
+.submit-button > input {
+  color: #fff;
+  background-color: #f4976c;
+  border: 0.15rem solid #f4976c;
+  padding: 0.5rem 1rem;
+  transition: background-color 1s;
+}
+
+.submit-button > input:hover {
+  background-color: #fff;
+  color: #f4976c;
+  border: 0.15rem solid #f4976c;
+}

@@ -9,15 +9,45 @@
     crossorigin="anonymous"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Rubik&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
+  <header class="row">
+      <h2> Code Journal</h2>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div class="container" data-view="edit-profile">
+      <div>
+        <h1>Edit Profile</h1>
+      </div>
+      <form class="profile-form" action="">
+        <div class="row">
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
+          </div>
+          <div class="column-half">
+            <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" required></label>
+            <label for="username">Username<input type="text" id="username" name="username" required></label>
+            <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" required></label>
+            <label for="location">Location<input type="text" id="location" name="location" required></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full">
+            <label for="bio">Bio <textarea type="text" id="bio" name="bio"  required></textarea></label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full submit-button">
+            <input type="submit" value="SAVE" class="submit">
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

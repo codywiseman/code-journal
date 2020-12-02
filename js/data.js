@@ -11,3 +11,10 @@ var data = {
   },
   entries: []
 };
+
+window.addEventListener('beforeunload', function (e) {
+  if (data.profile.username !== '') {
+    var dataJSON = JSON.stringify(data);
+    localStorage.setItem('profile data', dataJSON);
+  }
+});
