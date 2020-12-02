@@ -20,52 +20,34 @@
       <h2> Code Journal</h2>
   </header>
   <main>
-    <div class="container hidden" data-view="edit-profile">
-      <div>
-        <h1>Edit Profile</h1>
-      </div>
-      <form class="profile-form" action="">
-        <div class="row">
-          <div class="column-half">
-            <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
+    <div class="container">
+      <div class="" data-view="edit-profile">
+        <div>
+          <h1>Edit Profile</h1>
+        </div>
+        <form class="profile-form" action="">
+          <div class="row">
+            <div class="column-half">
+              <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
+            </div>
+            <div class="column-half">
+              <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" required></label>
+              <label for="username">Username<input type="text" id="username" name="username" required></label>
+              <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" required></label>
+              <label for="location">Location<input type="text" id="location" name="location" required></label>
+            </div>
           </div>
-          <div class="column-half">
-            <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" required></label>
-            <label for="username">Username<input type="text" id="username" name="username" required></label>
-            <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" required></label>
-            <label for="location">Location<input type="text" id="location" name="location" required></label>
+          <div class="row">
+            <div class="column-full">
+              <label for="bio">Bio <textarea type="text" id="bio" name="bio"  required></textarea></label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="column-full">
-            <label for="bio">Bio <textarea type="text" id="bio" name="bio"  required></textarea></label>
+          <div class="row">
+            <div class="column-full submit-button">
+              <input type="submit" value="SAVE" class="submit">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="column-full submit-button">
-            <input type="submit" value="SAVE" class="submit">
-          </div>
-        </div>
-      </form>
-    </div>
-    <div  class="container" data-view="profile">
-      <div>
-        <h1>Din Djarin</h1>
-      </div>
-      <div class="row">
-        <div class="column-half">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/TheMandalorian.jpg/220px-TheMandalorian.jpg" alt="Avatar Photo" class="placeholder-img">
-        </div>
-        <div class="column-half">
-          <h4><img src="https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png" class="icon">Mando</h4>
-          <h3><img src="https://img.icons8.com/pastel-glyph/2x/worldwide-location.png" class="icon">Zanbar</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ultricies nulla. Fusce consectetur, nisl non ornare
-          hendrerit, arcu augue finibus lectus, quis lobortis sapien nulla sed lacus. Quisque urna tortor, porta et erat vitae,
-          feugiat pellentesque nulla. Proin rutrum, nisi vel gravida lobortis, urna erat eleifend enim, et egestas diam eros sed
-          dui. Phasellus imperdiet sodales ultrices. Duis id velit vel diam tempus consequat non id ex. Ut molestie lorem quis
-          arcu fermentum, sit amet congue est maximus. Nunc sed sem faucibus, viverra est eget, viverra ante. Aliquam semper
-          turpis interdum lacus pellentesque, ut tempor urna malesuada. Duis ac augue sollicitudin magna vulputate venenatis.</p>
-        </div>
+        </form>
       </div>
     </div>
   </main>
@@ -73,3 +55,33 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+<!--<div class="container" data-view="profile">
+  <div>
+    <h1>Din Djarin</h1>
+  </div>
+  <div class="row">
+    <div class="column-half">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/TheMandalorian.jpg/220px-TheMandalorian.jpg"
+        alt="Avatar Photo" class="placeholder-img">
+    </div>
+    <div class="column-half">
+      <h4><img src="https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png" class="icon">Mando</h4>
+      <h3><img src="https://img.icons8.com/pastel-glyph/2x/worldwide-location.png" class="icon">Zanbar</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel ultricies nulla. Fusce consectetur, nisl non
+        ornare
+        hendrerit, arcu augue finibus lectus, quis lobortis sapien nulla sed lacus. Quisque urna tortor, porta et erat
+        vitae,
+        feugiat pellentesque nulla. Proin rutrum, nisi vel gravida lobortis, urna erat eleifend enim, et egestas diam
+        eros sed
+        dui. Phasellus imperdiet sodales ultrices. Duis id velit vel diam tempus consequat non id ex. Ut molestie lorem
+        quis
+        arcu fermentum, sit amet congue est maximus. Nunc sed sem faucibus, viverra est eget, viverra ante. Aliquam
+        semper
+        turpis interdum lacus pellentesque, ut tempor urna malesuada. Duis ac augue sollicitudin magna vulputate
+        venenatis.</p>
+    </div>
+  </div>
+</div>-->
