@@ -3,9 +3,16 @@ main {
 }
 
 header {
-  background-color: #e7717d;
+  background-color: #f4976c;
   color: #fff;
-  padding-left: 3rem;
+  padding-left: 10%;
+}
+
+input,
+textarea,
+img {
+  border: 0.15rem solid #303c6c;
+  border-radius: 0.2rem;
 }
 
 label,
@@ -22,6 +29,8 @@ label > input {
 
 label {
   height: 20%;
+  font-family: 'rubik', sans-serif;
+  color: #303c6c;
 }
 
 label:not([for='url']) {
@@ -40,4 +49,27 @@ textarea {
 
 .submit-button {
   text-align: end;
+}
+
+h1,
+h2 {
+  font-family: 'karla', sans-serif;
+}
+
+h1 {
+  color: #303c6c;
+}
+
+.submit-button > input {
+  color: #fff;
+  background-color: #f4976c;
+  border: 0.15rem solid #f4976c;
+  padding: 0.5rem 1rem;
+  transition: background-color 1s;
+}
+
+.submit-button > input:hover {
+  background-color: #fff;
+  color: #f4976c;
+  border: 0.15rem solid #f4976c;
 }
