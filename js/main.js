@@ -1,16 +1,18 @@
 
 var $profileForm = document.querySelector('.profile-form');
 
-var $avatarUrl = document.querySelector('.url');
-
 var $avatarImage = document.querySelector('.placeholder-img');
 
-/* var $submit = document.querySelector('.submit') */
+var $inputElements = document.querySelectorAll('[type=text]');
 
 $profileForm.addEventListener('input', function (e) {
-  $avatarImage.src = $avatarUrl.value;
+  if (e.target.matches('[name=avatarUrl]')) { $avatarImage.src = e.target.value; }
 });
 
 $profileForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  for (var inputNode = 0; inputNode < $inputElements.length; inputNode++) {
+    data.profile[$inputElements[inputNode].name] = $inputElements[inputNode].value;
 
+  }
 });
