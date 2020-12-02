@@ -16,11 +16,36 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h2> Code Journal</h2>
+  <header class="row">
+      <h2> Code Journal</h2>
   </header>
   <main>
-    <div data-view="edit-profile"></div>
+    <div class="container" data-view="edit-profile">
+      <div>
+        <h1>Edit Profile</h1>
+      </div>
+      <div class="profile-form">
+        <form action="">
+          <div class="row">
+            <div class="column-half">
+              <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
+            </div>
+            <div class="column-half">
+              <label for="url">Avatar URL<input type="text" id="url"></label>
+              <label for="username">Username<input type="text" id="username"></label>
+              <label for="fullname">Full Name<input type="text" id="fullname"></label>
+              <label for="location">Location<input type="text" id="location"></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <label for="bio">Bio <input type="text" id="bio"></label>
+            </div>
+          </div>
+        </form>
+        <input type="submit" value="SAVE">
+      </div>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
