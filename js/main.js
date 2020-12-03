@@ -21,6 +21,8 @@ $profileForm.addEventListener('submit', function (e) {
 
 function renderProfile(avatar) {
   var divOne = document.createElement('div');
+  divOne.setAttribute('data-view', 'profile');
+  divOne.setAttribute('class', 'view');
 
   var divTwo = document.createElement('div');
 
@@ -83,6 +85,8 @@ function renderProfile(avatar) {
 
 var $profileDiv = document.querySelector('[data-view=profile]');
 
+var $mainContainer = document.querySelector('.container');
+
 var $viewClasses = document.querySelectorAll('.view');
 
 function dataView(viewName) {
@@ -95,7 +99,7 @@ function dataView(viewName) {
     }
   }
   if (viewName === 'profile') {
-    $profileDiv.removeChild();
-    $profileDiv.appendChild(renderProfile());
+    $profileDiv.remove();
+    $mainContainer.appendChild(renderProfile(data));
   }
 }
