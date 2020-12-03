@@ -87,10 +87,10 @@ $profileDiv.appendChild(renderProfile(data));
 /* var $viewClasses = document.querySelectorAll('.view');
 
 function dataView(viewName) {
-  for (var i = 0; i < $viewClasses.lenghth; i++) {
+  for (var i = 0; i < $viewClasses.length; i++) {
     if($viewClasses[i].getAttribute('data-view') === viewName) {
       $viewClasses[i].className = 'view';
-      data.view = profile;
+      data.view = viewName;
     } else {
       $viewClasses[i].className = 'view hidden';
     }
