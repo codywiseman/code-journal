@@ -64,6 +64,11 @@ function renderProfile(avatar) {
 
   var bioText = document.createTextNode(data.profile.bio);
 
+  var link = document.createElement('button');
+  var linkText = document.createTextNode('EDIT');
+  link.setAttribute('href', '#');
+  link.setAttribute('data-view', 'edit-profile');
+
   divOne.appendChild(divTwo);
   headingOne.appendChild(headingOneText);
   divTwo.appendChild(headingOne);
@@ -78,6 +83,8 @@ function renderProfile(avatar) {
   divFive.appendChild(headingThree);
   paraOne.appendChild(bioText);
   divFive.appendChild(paraOne);
+  link.appendChild(linkText);
+  divFive.appendChild(link);
   divOne.appendChild(divThree);
 
   return divOne;
