@@ -80,12 +80,19 @@ function renderProfile(avatar) {
   return divOne;
 }
 
-var $profileDiv = document.querySelector('.profile');
+var $profileDiv = document.querySelector('[data-view=profile]');
 
 $profileDiv.appendChild(renderProfile(data));
 
-/* var $divContainer;
+/* var $viewClasses = document.querySelectorAll('.view');
 
-$divContainer.addEventListener('', function(e){
-
-}) */
+function dataView(viewName) {
+  for (var i = 0; i < $viewClasses.lenghth; i++) {
+    if($viewClasses[i].getAttribute('data-view') === viewName) {
+      $viewClasses[i].className = 'view';
+      data.view = profile;
+    } else {
+      $viewClasses[i].className = 'view hidden';
+    }
+  }
+}; */
