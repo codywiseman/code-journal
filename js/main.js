@@ -87,6 +87,8 @@ var $profileDiv = document.querySelector('[data-view=profile]');
 
 var $viewClasses = document.querySelectorAll('.view');
 
+var $bio = document.getElementById('bio');
+
 function dataView(viewName) {
   for (var i = 0; i < $viewClasses.length; i++) {
     if ($viewClasses[i].getAttribute('data-view') === viewName) {
@@ -99,5 +101,15 @@ function dataView(viewName) {
   if (viewName === 'profile') {
     $profileDiv.innerHTML = '';
     $profileDiv.appendChild(renderProfile(data));
+  }
+  for (var input = 0; input < $inputElements.length; input++) {
+    if (viewName === 'edit-profile' && data.profile.username !== null) {
+      var inputNameValue = data.profile[$inputElements[input].getAttribute('name')];
+      $inputElements[input].setAttribute('value', inputNameValue);
+    }
+  }
+  if (viewName === 'edit-profile' && data.profile.username !== null) {
+    $avatarImage.src = data.profile.avatarUrl;
+    $bio.value = data.profile.bio;
   }
 }
