@@ -16,6 +16,7 @@ $profileForm.addEventListener('submit', function (e) {
   }
   $profileForm.reset();
   $avatarImage.src = 'images/placeholder-image-square.jpg';
+  dataView('profile');
 });
 
 function renderProfile(avatar) {
@@ -82,17 +83,20 @@ function renderProfile(avatar) {
 
 var $profileDiv = document.querySelector('[data-view=profile]');
 
-$profileDiv.appendChild(renderProfile(data));
-
-/* var $viewClasses = document.querySelectorAll('.view');
+var $viewClasses = document.querySelectorAll('.view');
 
 function dataView(viewName) {
   for (var i = 0; i < $viewClasses.length; i++) {
-    if($viewClasses[i].getAttribute('data-view') === viewName) {
+    if ($viewClasses[i].getAttribute('data-view') === viewName) {
       $viewClasses[i].className = 'view';
       data.view = viewName;
     } else {
       $viewClasses[i].className = 'view hidden';
     }
   }
-}; */
+  if (viewName === 'profile') {
+    $profileDiv.remove('div');
+
+    $profileDiv.appendChild(renderProfile(data));
+  }
+}
