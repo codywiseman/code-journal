@@ -20,33 +20,37 @@
       <h2> Code Journal</h2>
   </header>
   <main>
-    <div class="container" data-view="edit-profile">
-      <div>
-        <h1>Edit Profile</h1>
+    <div class="container">
+      <div class="view" data-view="edit-profile">
+        <div>
+          <h1>Edit Profile</h1>
+        </div>
+        <form class="profile-form" action="">
+          <div class="row">
+            <div class="column-half">
+              <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
+            </div>
+            <div class="column-half">
+              <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" required></label>
+              <label for="username">Username<input type="text" id="username" name="username" required></label>
+              <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" required></label>
+              <label for="location">Location<input type="text" id="location" name="location" required></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <label for="bio">Bio <textarea type="text" id="bio" name="bio"  required></textarea></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full submit-button">
+              <input type="submit" value="SAVE" class="submit">
+            </div>
+          </div>
+        </form>
       </div>
-      <form class="profile-form" action="">
-        <div class="row">
-          <div class="column-half">
-            <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
-          </div>
-          <div class="column-half">
-            <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" required></label>
-            <label for="username">Username<input type="text" id="username" name="username" required></label>
-            <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" required></label>
-            <label for="location">Location<input type="text" id="location" name="location" required></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column-full">
-            <label for="bio">Bio <textarea type="text" id="bio" name="bio"  required></textarea></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="column-full submit-button">
-            <input type="submit" value="SAVE" class="submit">
-          </div>
-        </div>
-      </form>
+      <div class="view hidden" data-view="profile">
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
