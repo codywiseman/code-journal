@@ -20,8 +20,6 @@ $profileForm.addEventListener('submit', function (e) {
 
 function renderProfile(avatar) {
   var divOne = document.createElement('div');
-  divOne.setAttribute('class', 'container');
-  divOne.setAttribute('data-view', 'profile');
 
   var divTwo = document.createElement('div');
 
@@ -82,6 +80,12 @@ function renderProfile(avatar) {
   return divOne;
 }
 
-var $divContainer = document.querySelector('.container');
+var $profileDiv = document.querySelector('.profile');
 
-$divContainer.appendChild(renderProfile(data));
+$profileDiv.appendChild(renderProfile(data));
+
+/* var $divContainer;
+
+$divContainer.addEventListener('', function(e){
+
+}) */
