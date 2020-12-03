@@ -85,8 +85,6 @@ function renderProfile(avatar) {
 
 var $profileDiv = document.querySelector('[data-view=profile]');
 
-var $mainContainer = document.querySelector('.container');
-
 var $viewClasses = document.querySelectorAll('.view');
 
 function dataView(viewName) {
@@ -99,7 +97,7 @@ function dataView(viewName) {
     }
   }
   if (viewName === 'profile') {
-    $profileDiv.remove();
-    $mainContainer.appendChild(renderProfile(data));
+    $profileDiv.innerHTML = '';
+    $profileDiv.appendChild(renderProfile(data));
   }
-};
+}
