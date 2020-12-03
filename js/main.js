@@ -95,8 +95,7 @@ function dataView(viewName) {
     }
   }
   if (viewName === 'profile') {
-    $profileDiv.remove('div');
-
-    $profileDiv.appendChild(renderProfile(data));
+    $profileDiv.removeChild();
+    $profileDiv.appendChild(renderProfile());
   }
 }
