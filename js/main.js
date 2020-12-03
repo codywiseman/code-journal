@@ -102,4 +102,4 @@ function dataView(viewName) {
     $profileDiv.remove();
     $mainContainer.appendChild(renderProfile(data));
   }
-}
+};
