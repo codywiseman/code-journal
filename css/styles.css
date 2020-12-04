@@ -96,6 +96,8 @@ h1 {
 .edit {
   text-decoration: none;
   border-radius: 0.2rem;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .edit:hover,
