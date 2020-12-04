@@ -9,7 +9,6 @@ header {
   padding-left: 10%;
 }
 
-
 input,
 textarea {
   border: 0.17rem solid #303c6c;
@@ -71,15 +70,19 @@ ul {
   padding-left: 0;
 }
 
-li  {
+ol {
+  padding-left: 0;
+}
+
+li {
   list-style-type: none;
   margin-left: 1rem;
 }
 
 li > a {
-   text-decoration: none;
-   color: #ffffff;
-   font-size: 1.15rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.15rem;
 }
 
 h1 {
