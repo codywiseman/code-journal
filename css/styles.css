@@ -66,14 +66,20 @@ nav {
   align-items: center;
 }
 
+ul {
+  display: flex;
+  padding-left: 0;
+}
+
 li  {
   list-style-type: none;
+  margin-left: 1rem;
 }
 
 li > a {
    text-decoration: none;
    color: #ffffff;
-   font-size: 1.1rem;
+   font-size: 1.15rem;
 }
 
 h1 {
@@ -94,6 +100,7 @@ h1 {
 }
 
 .edit {
+  font-family: 'rubik', sans-serif;
   text-decoration: none;
   border-radius: 0.2rem;
   display: inline-block;

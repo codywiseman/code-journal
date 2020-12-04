@@ -139,5 +139,7 @@ document.addEventListener('click', function(e) {
     dataView('edit-profile');
   } else if (e.target.matches('.profile-link') && data.profile.username !== ''){
     dataView('profile');
+  } else if (e.target.matches('.entries-link') && data.profile.username !== '') {
+    dataView('entries');
   }
 })
