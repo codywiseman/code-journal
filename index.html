@@ -32,13 +32,13 @@
         <form class="profile-form" action="">
           <div class="row">
             <div class="column-half">
-              <img src="images/placeholder-image-square.jpg" alt="Placeholder image" class="placeholder-img">
+              <img src="images/placeholder-image-square.jpg" alt="Avatar image" class="placeholder-img">
             </div>
             <div class="column-half">
-              <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" required></label>
-              <label for="username">Username<input type="text" id="username" name="username" required></label>
-              <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" required></label>
-              <label for="location">Location<input type="text" id="location" name="location" required></label>
+              <label for="url">Avatar URL<input type="text" id="url" name="avatarUrl" class="form-input" required></label>
+              <label for="username">Username<input type="text" id="username" name="username" class="form-input" required></label>
+              <label for="fullname">Full Name<input type="text" id="fullname" name="fullName" class="form-input" required></label>
+              <label for="location">Location<input type="text" id="location" name="location" class="form-input" required></label>
             </div>
           </div>
           <div class="row">
@@ -54,7 +54,38 @@
         </form>
       </div>
       <div class="view hidden" data-view="profile"></div>
-      <div class="view hidden" data-view="entries"></div>
+      <div class="view hidden" data-view="entries">
+        <div class=entries-title>
+          <h1>Entries</h1>
+          <a href="#" class="new-entry" data-view="create-entry">NEW</a>
+        </div>
+      </div>
+      <div class="view hidden" data-view="create-entry">
+        <div>
+          <h1>New Entry</h1>
+        </div>
+        <form class="entry-form" action="">
+          <div class="row">
+            <div class="column-half">
+              <img src="images/placeholder-image-square.jpg" alt="Entry image" class="entry-img">
+            </div>
+            <div class="column-half">
+              <label for="photoUrl">Image URL<input type="text" id=photoUrl name="photoUrl" required></label>
+              <label for="title">Title<input type="text" id="title" name="title" required></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full">
+              <label for="notes">Notes<textarea type="text" id="notes" name="notes" required></textarea></label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column-full submit-button">
+              <input type="submit" value="SAVE" class="submit">
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>

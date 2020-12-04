@@ -36,7 +36,6 @@ h4 {
 }
 
 label {
-  height: 20%;
   color: #303c6c;
 }
 
@@ -51,6 +50,7 @@ textarea {
   margin: 1rem 0;
 }
 
+.entry-img,
 .placeholder-img {
   width: 100%;
 }
@@ -90,6 +90,7 @@ h1 {
   text-align: end;
 }
 
+.new-entry,
 .edit,
 .submit-button > input {
   color: #fff;
@@ -99,6 +100,7 @@ h1 {
   transition: background-color 1s;
 }
 
+.new-entry,
 .edit {
   font-family: 'rubik', sans-serif;
   text-decoration: none;
@@ -107,6 +109,7 @@ h1 {
   margin-top: 1rem;
 }
 
+.new-entry:hover,
 .edit:hover,
 .submit-button > input:hover {
   background-color: #fff;
@@ -120,7 +123,12 @@ h1 {
 }
 
 h3,
-h4 {
+h4,
+.entries-title {
   display: flex;
   align-items: center;
+}
+
+.entries-title {
+  justify-content: space-between;
 }

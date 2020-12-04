@@ -1,16 +1,27 @@
 
 var $profileForm = document.querySelector('.profile-form');
+var $entryForm = document.querySelector('.entry-form')
 var $avatarImage = document.querySelector('.placeholder-img');
-var $inputElements = document.querySelectorAll('[type=text]');
+var $entryImage = document.querySelector('.entry-img');
+var $inputElements = document.querySelectorAll('.form-input[type=text]');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
 var $viewClasses = document.querySelectorAll('.view');
 var $bio = document.getElementById('bio');
 
 
+/*    Photo Input Listeners   */
+
 $profileForm.addEventListener('input', function (e) {
   if (e.target.matches('[name=avatarUrl]')) { $avatarImage.src = e.target.value; }
 });
 
+$entryForm.addEventListener('input', function (e) {
+  if (e.target.matches('[name=photoUrl]')) { $entryImage.src = e.target.value; }
+});
+
+
+
+/*    Submit Listeners    */
 
 
 $profileForm.addEventListener('submit', function (e) {
@@ -141,5 +152,7 @@ document.addEventListener('click', function(e) {
     dataView('profile');
   } else if (e.target.matches('.entries-link') && data.profile.username !== '') {
     dataView('entries');
+  } else if (e.target.matches('.new-entry') && data.profile.username !== '') {
+    dataView('create-entry');
   }
 })
