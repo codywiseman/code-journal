@@ -10,6 +10,8 @@ var $viewClasses = document.querySelectorAll('.view');
 var $bio = document.getElementById('bio');
 
 
+
+
 /*    Photo Input Listeners   */
 
 $profileForm.addEventListener('input', function (e) {
@@ -42,6 +44,9 @@ $entryForm.addEventListener('submit', function(e) {
     entryObject[$entryInputs[entry].name] = $entryInputs[entry].value;
   }
   data.entries.unshift(entryObject);
+  $entryForm.reset();
+  $entryImage.src = 'images/placeholder-image-square.jpg';
+  dataView('entries');
 });
 
 
