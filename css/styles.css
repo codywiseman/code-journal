@@ -9,6 +9,7 @@ header {
   padding-left: 10%;
 }
 
+
 input,
 textarea {
   border: 0.17rem solid #303c6c;
@@ -55,8 +56,24 @@ textarea {
 }
 
 h1,
-h2 {
+h2,
+li > a {
   font-family: 'karla', sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+li  {
+  list-style-type: none;
+}
+
+li > a {
+   text-decoration: none;
+   color: #ffffff;
+   font-size: 1.1rem;
 }
 
 h1 {
@@ -67,14 +84,21 @@ h1 {
   text-align: end;
 }
 
+.edit,
 .submit-button > input {
   color: #fff;
   background-color: #f4976c;
   border: 0.15rem solid #f4976c;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.8rem;
   transition: background-color 1s;
 }
 
+.edit {
+  text-decoration: none;
+  border-radius: 0.2rem;
+}
+
+.edit:hover,
 .submit-button > input:hover {
   background-color: #fff;
   color: #f4976c;

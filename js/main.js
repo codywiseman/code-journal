@@ -76,6 +76,7 @@ function renderProfile(avatar) {
   var linkText = document.createTextNode('EDIT');
   link.setAttribute('href', '#');
   link.setAttribute('data-view', 'edit-profile');
+  link.setAttribute('class', 'edit')
 
   divOne.appendChild(divTwo);
   headingOne.appendChild(headingOneText);
@@ -126,7 +127,6 @@ function dataView(viewName) {
     $bio.value = data.profile.bio;
   }
 }
-
 
 
  /*     Click Event Listener For Edits      */
