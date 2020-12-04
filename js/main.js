@@ -4,6 +4,7 @@ var $entryForm = document.querySelector('.entry-form')
 var $avatarImage = document.querySelector('.placeholder-img');
 var $entryImage = document.querySelector('.entry-img');
 var $inputElements = document.querySelectorAll('.form-input[type=text]');
+var $entryInputs = document.querySelectorAll('.entry-input[type = text]');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
 var $viewClasses = document.querySelectorAll('.view');
 var $bio = document.getElementById('bio');
@@ -34,6 +35,14 @@ $profileForm.addEventListener('submit', function (e) {
   dataView('profile');
 });
 
+
+$entryForm.addEventListener('submit', function(e) {
+  var entryObject = {};
+  for(var entry = 0; entry < $entryInputs.length; entry++){
+    entryObject[$entryInputs[entry].name] = $entryInputs[entry].value;
+  }
+  data.entries.unshift(entryObject);
+});
 
 
 /*   Render Profile DOM Creation Function    */
