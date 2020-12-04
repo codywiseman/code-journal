@@ -30,7 +30,7 @@ window.addEventListener('beforeunload', function (e) {
 var previousProfileData = JSON.parse(previousProfile);
 
 document.addEventListener('DOMContentLoaded', function (e) {
-  if (previousProfileData.profile.username !== null) {
+  if (previousProfileData !== null) {
     dataView('profile');
   }
   else {

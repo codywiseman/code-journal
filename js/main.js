@@ -1,13 +1,17 @@
 
 var $profileForm = document.querySelector('.profile-form');
-
 var $avatarImage = document.querySelector('.placeholder-img');
-
 var $inputElements = document.querySelectorAll('[type=text]');
+var $profileDiv = document.querySelector('div[data-view="profile"]');
+var $viewClasses = document.querySelectorAll('.view');
+var $bio = document.getElementById('bio');
+
 
 $profileForm.addEventListener('input', function (e) {
   if (e.target.matches('[name=avatarUrl]')) { $avatarImage.src = e.target.value; }
 });
+
+
 
 $profileForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -18,6 +22,10 @@ $profileForm.addEventListener('submit', function (e) {
   $avatarImage.src = 'images/placeholder-image-square.jpg';
   dataView('profile');
 });
+
+
+
+/*   Render Profile DOM Creation Function    */
 
 function renderProfile(avatar) {
   var divOne = document.createElement('div');
@@ -64,6 +72,12 @@ function renderProfile(avatar) {
 
   var bioText = document.createTextNode(data.profile.bio);
 
+  var link = document.createElement('a');
+  var linkText = document.createTextNode('EDIT');
+  link.setAttribute('href', '#');
+  link.setAttribute('data-view', 'edit-profile');
+  link.setAttribute('class', 'edit');
+
   divOne.appendChild(divTwo);
   headingOne.appendChild(headingOneText);
   divTwo.appendChild(headingOne);
@@ -78,16 +92,16 @@ function renderProfile(avatar) {
   divFive.appendChild(headingThree);
   paraOne.appendChild(bioText);
   divFive.appendChild(paraOne);
+  link.appendChild(linkText);
+  divFive.appendChild(link);
   divOne.appendChild(divThree);
 
   return divOne;
 }
 
-var $profileDiv = document.querySelector('[data-view=profile]');
 
-var $mainContainer = document.querySelector('.container');
 
-var $viewClasses = document.querySelectorAll('.view');
+/*    View Swapping    */
 
 function dataView(viewName) {
   for (var i = 0; i < $viewClasses.length; i++) {
@@ -99,7 +113,31 @@ function dataView(viewName) {
     }
   }
   if (viewName === 'profile') {
-    $profileDiv.remove();
-    $mainContainer.appendChild(renderProfile(data));
+    $profileDiv.innerHTML = '';
+    $profileDiv.appendChild(renderProfile(data));
   }
-};
+  for (var input = 0; input < $inputElements.length; input++) {
+    if (viewName === 'edit-profile' && data.profile.username !== '') {
+      var inputNameValue = data.profile[$inputElements[input].getAttribute('name')];
+      $inputElements[input].setAttribute('value', inputNameValue);
+    }
+  }
+  if (viewName === 'edit-profile' && data.profile.username !== '') {
+    $avatarImage.src = data.profile.avatarUrl;
+    $bio.value = data.profile.bio;
+  }
+}
+
+
+ /*     Click Event Listener For Edits      */
+
+
+document.addEventListener('click', function(e) {
+  if(e.target.tagName !== 'A') {
+    return;
+  } else if (e.target.matches('a.edit')){
+    dataView('edit-profile');
+  } else if (e.target.matches('.profile-link') && data.profile.username !== ''){
+    dataView('profile');
+  }
+})
