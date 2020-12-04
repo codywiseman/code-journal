@@ -1,13 +1,17 @@
 
 var $profileForm = document.querySelector('.profile-form');
-
 var $avatarImage = document.querySelector('.placeholder-img');
-
 var $inputElements = document.querySelectorAll('[type=text]');
+var $profileDiv = document.querySelector('[data-view=profile]');
+var $viewClasses = document.querySelectorAll('.view');
+var $bio = document.getElementById('bio');
+
 
 $profileForm.addEventListener('input', function (e) {
   if (e.target.matches('[name=avatarUrl]')) { $avatarImage.src = e.target.value; }
 });
+
+
 
 $profileForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -18,6 +22,10 @@ $profileForm.addEventListener('submit', function (e) {
   $avatarImage.src = 'images/placeholder-image-square.jpg';
   dataView('profile');
 });
+
+
+
+/*   Render Profile DOM Creation Function    */
 
 function renderProfile(avatar) {
   var divOne = document.createElement('div');
@@ -64,7 +72,7 @@ function renderProfile(avatar) {
 
   var bioText = document.createTextNode(data.profile.bio);
 
-  var link = document.createElement('button');
+  var link = document.createElement('a');
   var linkText = document.createTextNode('EDIT');
   link.setAttribute('href', '#');
   link.setAttribute('data-view', 'edit-profile');
@@ -90,11 +98,9 @@ function renderProfile(avatar) {
   return divOne;
 }
 
-var $profileDiv = document.querySelector('[data-view=profile]');
 
-var $viewClasses = document.querySelectorAll('.view');
 
-var $bio = document.getElementById('bio');
+/*    View Swapping    */
 
 function dataView(viewName) {
   for (var i = 0; i < $viewClasses.length; i++) {
@@ -120,3 +126,16 @@ function dataView(viewName) {
     $bio.value = data.profile.bio;
   }
 }
+
+
+
+ /*     Click Event Listener For Edits      */
+
+
+document.addEventListener('click', function(e) {
+  if(e.target.tagName !== 'A') {
+    return;
+  } else {
+    dataView('edit-profile');
+  }
+})
