@@ -49,6 +49,7 @@ textarea {
   margin: 1rem 0;
 }
 
+.entry-img-place,
 .entry-img,
 .placeholder-img {
   width: 100%;
@@ -67,10 +68,6 @@ nav {
 
 ul {
   display: flex;
-  padding-left: 0;
-}
-
-ol {
   padding-left: 0;
 }
 
@@ -134,4 +131,8 @@ h4,
 
 .entries-title {
   justify-content: space-between;
+}
+
+.entry-title {
+  margin-top: 0;
 }

@@ -2,7 +2,7 @@
 var $profileForm = document.querySelector('.profile-form');
 var $entryForm = document.querySelector('.entry-form')
 var $avatarImage = document.querySelector('.placeholder-img');
-var $entryImage = document.querySelector('.entry-img');
+var $entryImage = document.querySelector('.entry-img-place');
 var $inputElements = document.querySelectorAll('.form-input[type=text]');
 var $entryInputs = document.querySelectorAll('.entry-input[type = text]');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
@@ -125,33 +125,9 @@ function renderProfile(avatar) {
 }
 
 
-/*
-<ol>
-  <li>
-    <div class="row">
-      <div class="column-half">
-        <img src="images/placeholder-image-square.jpg" alt="" class="entry-img">
-      </div>
-      div class="column-half">
-        <h3>Title</h3>
-        <p>Sed eleifend non dui vitae mattis. Vestibulum ut eros lacinia, congue lorem eleifend, tincidunt urna. Fusce
-          mi turpis,
-          consectetur sit amet dui eu, tincidunt tristique neque. Aliquam molestie venenatis metus, id vulputate neque
-          consequat
-          a. Suspendisse venenatis, massa quis porta varius, elit velit convallis nisl, sit amet tincidunt justo
-          tortor vel
-          sapien. Pellentesque ut congue odio. Vestibulum eget blandit mauris, auctor suscipit nibh. Nullam convallis
-          lacus a nisi
-          congue condimentum. Morbi malesuada luctus felis, sit amet iaculis dolor luctus eget. Praesent placerat
-          nulla vitae
-          sagittis sagittis.</p>
-      </div>
-    </div>
-  </li>
-</ol>
-*/
 
 function renderJournalEntry (entry) {
+  for(var x = 0; x < data.entries.length; x++ ) {
     var listItem = document.createElement('li');
     var divRow = document.createElement('div');
     divRow.setAttribute('class', 'row');
@@ -163,6 +139,7 @@ function renderJournalEntry (entry) {
     var divColTwo = document.createElement('div');
     divColTwo.setAttribute('class', 'column-half');
     var entryHeadTag = document.createElement('h3');
+    entryHeadTag.setAttribute('class', 'entry-title');
     var entryTitle = document.createTextNode(entry.title);
     entryHeadTag.appendChild(entryTitle);
     var entryTag = document.createElement('p');
@@ -176,7 +153,8 @@ function renderJournalEntry (entry) {
     divColTwo.appendChild(entryHeadTag);
     divColTwo.appendChild(entryTag);
 
-    return listItem;
+    $orderedList.appendChild(listItem);
+}
 }
 
 
