@@ -46,6 +46,8 @@ $entryForm.addEventListener('submit', function(e) {
   data.entries.unshift(entryObject);
   $entryForm.reset();
   $entryImage.src = 'images/placeholder-image-square.jpg';
+  $orderedList.innerHTML = '';
+  $orderedList.appendChild(renderJournalEntry(data.entries));
   dataView('entries');
 });
 
@@ -125,8 +127,8 @@ function renderProfile(avatar) {
 }
 
 
-
 function renderJournalEntry (entry) {
+  var listDiv = document.createElement('div');
   for(var x = 0; x < data.entries.length; x++ ) {
     var listItem = document.createElement('li');
     var divRow = document.createElement('div');
@@ -134,16 +136,16 @@ function renderJournalEntry (entry) {
     var divColOne = document.createElement('div');
     divColOne.setAttribute('class', 'column-half');
     var entryImg = document.createElement('img');
-    entryImg.setAttribute('src', entry.photoUrl);
+    entryImg.setAttribute('src', entry[x].photoUrl);
     entryImg.setAttribute('class', 'entry-img');
     var divColTwo = document.createElement('div');
     divColTwo.setAttribute('class', 'column-half');
     var entryHeadTag = document.createElement('h3');
     entryHeadTag.setAttribute('class', 'entry-title');
-    var entryTitle = document.createTextNode(entry.title);
+    var entryTitle = document.createTextNode(entry[x].title);
     entryHeadTag.appendChild(entryTitle);
     var entryTag = document.createElement('p');
-    var entryNotes = document.createTextNode(entry.notes);
+    var entryNotes = document.createTextNode(entry[x].notes);
     entryTag.appendChild(entryNotes);
 
     listItem.appendChild(divRow);
@@ -152,9 +154,9 @@ function renderJournalEntry (entry) {
     divRow.appendChild(divColTwo);
     divColTwo.appendChild(entryHeadTag);
     divColTwo.appendChild(entryTag);
-
-    $orderedList.appendChild(listItem);
-}
+    listDiv.appendChild(listItem);
+  }
+  return listDiv;
 }
 
 

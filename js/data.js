@@ -38,5 +38,5 @@ document.addEventListener('DOMContentLoaded', function (e) {
   else {
     dataView('edit-profile');
   }
-  renderJournalEntry(data.entries)
+  $orderedList.appendChild(renderJournalEntry(data.entries));
 });
