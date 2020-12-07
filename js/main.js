@@ -2,7 +2,7 @@
 var $profileForm = document.querySelector('.profile-form');
 var $entryForm = document.querySelector('.entry-form')
 var $avatarImage = document.querySelector('.placeholder-img');
-var $entryImage = document.querySelector('.entry-img');
+var $entryImage = document.querySelector('.entry-img-place');
 var $inputElements = document.querySelectorAll('.form-input[type=text]');
 var $entryInputs = document.querySelectorAll('.entry-input[type = text]');
 var $profileDiv = document.querySelector('div[data-view="profile"]');
@@ -46,11 +46,13 @@ $entryForm.addEventListener('submit', function(e) {
   data.entries.unshift(entryObject);
   $entryForm.reset();
   $entryImage.src = 'images/placeholder-image-square.jpg';
+  $orderedList.innerHTML = '';
+  $orderedList.appendChild(renderJournalEntry(data.entries));
   dataView('entries');
 });
 
 
-/*   Render Profile DOM Creation Function    */
+/*   Render Profile and Journal Entry DOM Creation Function    */
 
 function renderProfile(avatar) {
   var divOne = document.createElement('div');
@@ -122,6 +124,39 @@ function renderProfile(avatar) {
   divOne.appendChild(divThree);
 
   return divOne;
+}
+
+
+function renderJournalEntry (entry) {
+  var listDiv = document.createElement('div');
+  for(var x = 0; x < data.entries.length; x++ ) {
+    var listItem = document.createElement('li');
+    var divRow = document.createElement('div');
+    divRow.setAttribute('class', 'row');
+    var divColOne = document.createElement('div');
+    divColOne.setAttribute('class', 'column-half');
+    var entryImg = document.createElement('img');
+    entryImg.setAttribute('src', entry[x].photoUrl);
+    entryImg.setAttribute('class', 'entry-img');
+    var divColTwo = document.createElement('div');
+    divColTwo.setAttribute('class', 'column-half');
+    var entryHeadTag = document.createElement('h3');
+    entryHeadTag.setAttribute('class', 'entry-title');
+    var entryTitle = document.createTextNode(entry[x].title);
+    entryHeadTag.appendChild(entryTitle);
+    var entryTag = document.createElement('p');
+    var entryNotes = document.createTextNode(entry[x].notes);
+    entryTag.appendChild(entryNotes);
+
+    listItem.appendChild(divRow);
+    divRow.appendChild(divColOne);
+    divColOne.appendChild(entryImg);
+    divRow.appendChild(divColTwo);
+    divColTwo.appendChild(entryHeadTag);
+    divColTwo.appendChild(entryTag);
+    listDiv.appendChild(listItem);
+  }
+  return listDiv;
 }
 
 

@@ -9,7 +9,6 @@ header {
   padding-left: 10%;
 }
 
-
 input,
 textarea {
   border: 0.17rem solid #303c6c;
@@ -50,6 +49,7 @@ textarea {
   margin: 1rem 0;
 }
 
+.entry-img-place,
 .entry-img,
 .placeholder-img {
   width: 100%;
@@ -71,15 +71,15 @@ ul {
   padding-left: 0;
 }
 
-li  {
+li {
   list-style-type: none;
   margin-left: 1rem;
 }
 
 li > a {
-   text-decoration: none;
-   color: #ffffff;
-   font-size: 1.15rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.15rem;
 }
 
 h1 {
@@ -131,4 +131,8 @@ h4,
 
 .entries-title {
   justify-content: space-between;
+}
+
+.entry-title {
+  margin-top: 0;
 }

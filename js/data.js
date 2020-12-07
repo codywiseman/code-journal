@@ -29,6 +29,8 @@ window.addEventListener('beforeunload', function (e) {
 
 var previousProfileData = JSON.parse(previousProfile);
 
+var $orderedList = document.querySelector('ol')
+
 document.addEventListener('DOMContentLoaded', function (e) {
   if (previousProfileData !== null) {
     dataView('profile');
@@ -36,4 +38,5 @@ document.addEventListener('DOMContentLoaded', function (e) {
   else {
     dataView('edit-profile');
   }
+  $orderedList.appendChild(renderJournalEntry(data.entries));
 });
